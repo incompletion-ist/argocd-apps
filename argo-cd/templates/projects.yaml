@@ -15,18 +15,3 @@ spec:
   clusterResourceWhitelist:
     - group: '*'
       kind: '*'
----
-apiVersion: argoproj.io/v1alpha1
-kind: AppProject
-metadata:
-  name: vault
-  namespace: vault
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
-spec:
-  description: Vault Deployment
-  sourceRepos:
-    - https://github.com/incompletion-ist/argocd-apps
-  destinations:
-    - namespace: vault
-      server: https://kubernetes.default.svc
