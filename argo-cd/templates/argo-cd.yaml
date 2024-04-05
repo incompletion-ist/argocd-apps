@@ -10,6 +10,6 @@ spec:
     server: https://kubernetes.default.svc
   project: argocd
   source:
-    path: argo-cd
+    path: argo-cd-projects
     repoURL: https://github.com/incompletion-ist/argocd-apps.git
     targetRevision: HEAD
