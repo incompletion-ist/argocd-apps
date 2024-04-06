@@ -1,0 +1,30 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: cert-manager
+  namespace: argocd
+  finalizers: null
+spec:
+  description: cert-manager Deployment
+  sourceRepos:
+    - https://github.com/incompletion-ist/argocd-apps
+  destinations:
+    - namespace: cert-manager
+      server: https://kubernetes.default.svc
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cert-manager-vault
+  namespace: argocd
+  finalizers: null
+spec:
+  destination:
+    namespace: cert-manager
+    server: https://kubernetes.default.svc
+  project: cert-manager
+  source:
+    path: cert-manager-vault
+    repoURL: https://github.com/incompletion-ist/argocd-apps.git
+    targetRevision: cert-manager-vault
