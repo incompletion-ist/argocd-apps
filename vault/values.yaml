@@ -2,8 +2,6 @@ vault:
   injector:
     enabled: finalizers
   server:
-    authDelegator:
-      enabled: false
     logLevel: debug
   ui:
     enabled: true
