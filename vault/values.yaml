@@ -3,5 +3,18 @@ vault:
     enabled: finalizers
   server:
     logLevel: debug
+    ingress:
+      enabled: true
+      annotations:
+        cert-manager.io/cluster-issuer: vault-issuer
+        cert-manager.io/common-name: vault.incompletion.ist
+        cert-manager.io/private-key-size: "4096"
+      ingressClassName: nginx
+      hosts:
+        - host: vault.incompletion.ist
+      tls:
+        - secretName: vault-tls
+          hosts:
+            - vault.incompletion.ist
   ui:
     enabled: true
