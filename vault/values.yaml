@@ -4,5 +4,6 @@ vault:
   server:
     authDelegator:
       enabled: false
+    logLevel: debug
   ui:
     enabled: true
