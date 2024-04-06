@@ -1,1 +1,16 @@
-{}
+global:
+  domain: argocd.incompletion.ist
+server:
+  ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: vault-issuer
+      cert-manager.io/common-name: argocd.incompletion.ist
+      cert-manager.io/private-key-size: "4096"
+    ingressClassName: nginx
+    hostname: argocd.incompletion.ist
+    tls: true
+    extraTls:
+      - hosts:
+          - argocd.incompletion.ist
+        secretName: argocd-tls
