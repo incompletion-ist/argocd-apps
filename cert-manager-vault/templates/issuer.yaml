@@ -9,7 +9,7 @@ spec:
     server: http://vault.vault:8200
     auth:
       kubernetes:
-        role: cert-manager-vault
+        role: vault-issuer
         mountPath: /v1/auth/kubernetes
         serviceAccountRef:
           name: vault-issuer
