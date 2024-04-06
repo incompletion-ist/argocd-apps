@@ -4,8 +4,7 @@ kind: AppProject
 metadata:
   name: vault
   namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
+  finalizers: null
 spec:
   description: Vault Deployment
   sourceRepos:
@@ -19,8 +18,7 @@ kind: Application
 metadata:
   name: vault
   namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
+  finalizers: null
 spec:
   destination:
     namespace: vault
