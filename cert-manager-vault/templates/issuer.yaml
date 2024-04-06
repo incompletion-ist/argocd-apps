@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: vault-issuer
+spec:
+  vault:
+    path: pki/sign/incompletion.ist
+    server: http://vault.vault:8200
+    auth:
+      kubernetes:
+        role: cert-manager-vault
+        mountPath: /v1/auth/kubernetes
+        serviceAccountRef:
+          name: vault-issuer
