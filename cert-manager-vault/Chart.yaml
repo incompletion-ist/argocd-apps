@@ -1,0 +1,5 @@
+apiVersion: v2
+name: cert-manager-vault
+description: Configure cert-manager for Vault
+type: application
+version: "0.1.0"
