@@ -3,8 +3,15 @@ vault:
     enabled: finalizers
   server:
     logLevel: debug
-    extraContainers:
-      - name: nginx
-        image: nginx:1.25.4
+    ingress:
+      enabled: true
+      annotations:
+        cert-manager.io/cluster-issuer: vault-issuer
+      ingressClassName: nginx
+      hosts:
+        - host: vault.incompletion.ist
+      tls:
+        - secretName: vault-tls
+          hosts: vault.incompletion.ist
   ui:
     enabled: true
