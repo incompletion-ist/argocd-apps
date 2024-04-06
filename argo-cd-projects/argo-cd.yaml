@@ -30,7 +30,7 @@ spec:
   source:
     path: argo-cd
     repoURL: https://github.com/incompletion-ist/argocd-apps.git
-    targetRevision: HEAD
+    targetRevision: argo-ingress
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -46,4 +46,4 @@ spec:
   source:
     path: argo-cd-projects
     repoURL: https://github.com/incompletion-ist/argocd-apps.git
-    targetRevision: argo-ingress
+    targetRevision: HEAD
