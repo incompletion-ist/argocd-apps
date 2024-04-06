@@ -12,6 +12,7 @@ vault:
         - host: vault.incompletion.ist
       tls:
         - secretName: vault-tls
-          hosts: vault.incompletion.ist
+          hosts:
+            - vault.incompletion.ist
   ui:
     enabled: true
