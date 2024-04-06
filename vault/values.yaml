@@ -5,6 +5,6 @@ vault:
     logLevel: debug
     extraContainers:
       - name: nginx
-        image: nginx:2.25.4
+        image: nginx:1.25.4
   ui:
     enabled: true
