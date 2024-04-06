@@ -7,7 +7,7 @@ vault:
       enabled: true
       annotations:
         cert-manager.io/cluster-issuer: vault-issuer
-        cert-manager.io/private-key-size: 4096
+        cert-manager.io/private-key-size: "4096"
       ingressClassName: nginx
       hosts:
         - host: vault.incompletion.ist
