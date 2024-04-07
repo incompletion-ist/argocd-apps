@@ -1,5 +1,8 @@
 global:
   domain: argocd.incompletion.ist
+configs:
+  params:
+    server.insecure: true
 server:
   ingress:
     enabled: true
@@ -7,9 +10,10 @@ server:
       cert-manager.io/cluster-issuer: vault-issuer
       cert-manager.io/common-name: argocd.incompletion.ist
       cert-manager.io/private-key-size: "4096"
+      nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+      nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
     ingressClassName: nginx
     hostname: argocd.incompletion.ist
-    tls: true
     extraTls:
       - hosts:
           - argocd.incompletion.ist
