@@ -7,6 +7,7 @@ spec:
   type: kv-v2
   mount: kv
   path: github.com/micahkemp/argocd
+  vaultAuthRef: vault-secrets-operator/default
   destination:
     name: githib-auth
     create: true
