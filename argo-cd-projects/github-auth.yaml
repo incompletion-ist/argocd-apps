@@ -51,5 +51,7 @@ spec:
   path: github.com/micahkemp/argocd
   vaultAuthRef: github-auth
   destination:
-    name: githib-auth
+    name: github-auth
     create: true
+    labels:
+      argocd.argoproj.io/secret-type: repository
