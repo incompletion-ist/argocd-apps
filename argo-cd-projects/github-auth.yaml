@@ -1,29 +1,12 @@
-apiVersion: secrets-store.csi.x-k8s.io/v1
-kind: SecretProviderClass
+apiVersion: secrets.hashicorp.com/v1beta1
+kind: VaultStaticSecret
 metadata:
-  name: github-micahkemp
+  name: github-auth
+  namespace: argocd
 spec:
-  provider: vault
-  secretObjects:
-    - stringData:
-        - key: type
-          objectName: type
-        - key: url
-          objectName: url
-        - key: sshPrivateKey
-          objectName: sshPrivateKey
-      secretName: github-micahkemp
-      type: Opaque
-  parameters:
-    vaultAddress: "http://vault.vault:8200"
-    roleName: "argocd"
-    objects: |
-      - objectName: "type"
-        secretPath: "kv/github.com/micahkemp/argocd"
-        secretKey: "type"
-      - objectName: "url"
-        secretPath: "kv/github.com/micahkemp/argocd"
-        secretKey: "url"
-      - objectName: "sshPrivateKey"
-        secretPath: "kv/github.com/micahkemp/argocd"
-        secretKey: "sshPrivateKey"
+  type: kv-v2
+  mount: kv
+  path: github.com/micahkemp/argocd
+  destination:
+    name: githib-auth
+    create: true
