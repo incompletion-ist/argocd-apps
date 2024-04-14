@@ -1,3 +1,45 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: github-auth
+rules:
+  - apiGroups: ['']
+    resources: ['serviceaccounts/token']
+    resourceNames: ['github-auth']
+    verbs: ['create']
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: github-auth
+subjects:
+  - kind: ServiceAccount
+    name: github-auth
+    namespace: argocd
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: github-auth
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: github-auth
+---
+apiVersion: secrets.hashicorp.com/v1beta1
+kind: VaultAuth
+metadata:
+  name: github-auth
+  namespace: argocd
+spec:
+  vaultConnectionRef: vault-secrets-operator/default
+  method: kubernetes
+  mount: kubernetes
+  kubernetes:
+    role: github-auth
+    serviceAccount: github-auth
+---
 apiVersion: secrets.hashicorp.com/v1beta1
 kind: VaultStaticSecret
 metadata:
@@ -7,7 +49,7 @@ spec:
   type: kv-v2
   mount: kv
   path: github.com/micahkemp/argocd
-  vaultAuthRef: vault-secrets-operator/default
+  vaultAuthRef: github-auth
   destination:
     name: githib-auth
     create: true
