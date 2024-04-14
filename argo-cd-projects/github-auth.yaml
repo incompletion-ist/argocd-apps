@@ -5,15 +5,25 @@ metadata:
 spec:
   provider: vault
   secretObjects:
-    - data:
-      - key: private_key
-        objectName: github-micahkemp
+    - stringData:
+        - key: type
+          objectName: type
+        - key: url
+          objectName: url
+        - key: sshPrivateKey
+          objectName: sshPrivateKey
       secretName: github-micahkemp
       type: Opaque
   parameters:
     vaultAddress: "http://vault.vault:8200"
     roleName: "argocd"
     objects: |
-      - objectName: "github-micahkemp"
+      - objectName: "type"
         secretPath: "kv/github.com/micahkemp/argocd"
-        secretKey: "private_key"
+        secretKey: "type"
+      - objectName: "url"
+        secretPath: "kv/github.com/micahkemp/argocd"
+        secretKey: "url"
+      - objectName: "sshPrivateKey"
+        secretPath: "kv/github.com/micahkemp/argocd"
+        secretKey: "sshPrivateKey"
