@@ -46,4 +46,4 @@ spec:
   source:
     path: argo-cd-projects
     repoURL: https://github.com/incompletion-ist/argocd-apps.git
-    targetRevision: HEAD
+    targetRevision: github-credentials
