@@ -1,0 +1,5 @@
+vault-secrets-operator:
+  defaultVaultConnection:
+    enabled: true
+    address: "http://vault.vault:8200"
+    skipTLSVerify: false
