@@ -1,0 +1,10 @@
+apiVersion: v2
+name: vault-secrets-operator
+description: Install vault-secrets-operator with our configurations
+type: application
+version: "0.1.0"
+appVersion: "0.5.2"
+dependencies:
+  - name: vault-secrets-operator
+    version: "0.5.2"
+    repository: https://helm.releases.hashicorp.com
