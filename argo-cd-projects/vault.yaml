@@ -30,4 +30,4 @@ spec:
   source:
     path: vault
     repoURL: git@github.com:incompletion-ist/argocd-apps.git
-    targetRevision: vault_csi
+    targetRevision: HEAD
