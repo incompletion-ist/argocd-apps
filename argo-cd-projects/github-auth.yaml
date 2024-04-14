@@ -37,7 +37,7 @@ spec:
   method: kubernetes
   mount: kubernetes
   kubernetes:
-    role: github-auth
+    role: argocd
     serviceAccount: github-auth
 ---
 apiVersion: secrets.hashicorp.com/v1beta1
