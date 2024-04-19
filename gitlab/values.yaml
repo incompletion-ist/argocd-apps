@@ -1,7 +1,7 @@
 gitlab:
   global:
     hosts:
-      domain: gitlab.incompletion.ist
+      domain: incompletion.ist
       https: false
     ingress:
       configureCertmanager: false
