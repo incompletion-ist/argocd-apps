@@ -1,0 +1,54 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: gitlab-auth
+rules:
+  - apiGroups: ['']
+    resources: ['serviceaccounts/token']
+    resourceNames: ['gitlab-auth']
+    verbs: ['create']
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: gitlab-auth
+subjects:
+  - kind: ServiceAccount
+    name: gitlab-auth
+    namespace: gitlab
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: gitlab-auth
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: gitlab-auth
+---
+apiVersion: secrets.hashicorp.com/v1beta1
+kind: VaultAuth
+metadata:
+  name: gitlab-auth
+  namespace: gitlab
+spec:
+  vaultConnectionRef: vault-secrets-operator/default
+  method: kubernetes
+  mount: kubernetes
+  kubernetes:
+    role: gitlab
+    serviceAccount: gitlab-auth
+---
+apiVersion: secrets.hashicorp.com/v1beta1
+kind: VaultStaticSecret
+metadata:
+  name: smtp-auth
+  namespace: argocd
+spec:
+  type: kv-v2
+  mount: kv
+  path: smtp.gmail.com/gitlab.incompletion.ist/micah
+  vaultAuthRef: gitlab-auth
+  destination:
+    name: smtp-auth
+    create: true
