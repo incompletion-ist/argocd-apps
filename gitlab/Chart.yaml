@@ -1,0 +1,10 @@
+apiVersion: v2
+name: gitlab
+description: Install GitLab with our configurations
+type: application
+version: "0.1.0"
+appVersion: "16.11.0"
+dependencies:
+  - name: gitlab
+    version: "7.11.0"
+    repository: https://charts.gitlab.io/

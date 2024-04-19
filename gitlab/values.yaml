@@ -1,0 +1,6 @@
+gitlab:
+  global:
+    edition: ce
+    hosts:
+      domain: gitlab.incompletion.ist
+      https: true
