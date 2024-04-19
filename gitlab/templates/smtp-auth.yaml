@@ -43,7 +43,7 @@ apiVersion: secrets.hashicorp.com/v1beta1
 kind: VaultStaticSecret
 metadata:
   name: smtp-auth
-  namespace: argocd
+  namespace: gitlab
 spec:
   type: kv-v2
   mount: kv
