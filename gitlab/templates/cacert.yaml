@@ -3,7 +3,7 @@ kind: Secret
 metadata:
   name: cacert
 stringData:
-  incompletionist: |
+  gitlab.incompletion.ist.crt: |
     -----BEGIN CERTIFICATE-----
     MIIFaTCCA1GgAwIBAgIUD/P9CRKGD3S7yBN/N65kRztCITYwDQYJKoZIhvcNAQEL
     BQAwPDEYMBYGA1UEChMPSW5jb21wbGV0aW9uaXN0MSAwHgYDVQQDExdJbmNvbXBs
