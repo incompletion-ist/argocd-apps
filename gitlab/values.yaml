@@ -4,6 +4,19 @@ gitlab:
       domain: incompletion.ist
     ingress:
       configureCertmanager: false
+    email:
+      display_name: 'Incompletionist GitLab'
+      from: 'gitlab@gitlab.incompletion.ist'
+      reply_to: 'noreply@gitlab.incompletion.ist'
+    smtp:
+      enabled: true
+      address: smtp.gmail.com
+      tls: true
+      authentication: plain
+      user_name: micah@kemp.tv
+      password:
+        secret: smtp-auth
+        key: password
   certmanager:
     install: false
   upgradeCheck:
