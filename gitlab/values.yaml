@@ -2,10 +2,18 @@ gitlab:
   global:
     hosts:
       domain: incompletion.ist
-      https: false
     ingress:
       configureCertmanager: false
   certmanager:
     install: false
   upgradeCheck:
     enabled: false
+  gitlab:
+    webservice:
+      ingress:
+        annotations:
+          cert-manager.io/cluster-issuer: vault-issuer
+          cert-manager.io/private-key-size: "4096"
+          cert-manager.io/common-name: gitlab.incompletion.ist
+        tls:
+          secretName: webservice-tls
