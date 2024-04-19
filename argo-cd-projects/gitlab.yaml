@@ -1,0 +1,30 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: gitlab
+  namespace: argocd
+  finalizers: null
+spec:
+  description: GitLab Deployment
+  sourceRepos:
+    - git@github.com:incompletion-ist/argocd-apps.git
+  destinations:
+    - namespace: gitlab
+      server: https://kubernetes.default.svc
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitlab
+  namespace: argocd
+  finalizers: null
+spec:
+  destination:
+    namespace: gitlab
+    server: https://kubernetes.default.svc
+  project: gitlab
+  source:
+    path: gitlab
+    repoURL: git@github.com:incompletion-ist/argocd-apps.git
+    targetRevision: gitlab
