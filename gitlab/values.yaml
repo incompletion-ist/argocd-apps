@@ -7,3 +7,5 @@ gitlab:
       configureCertmanager: false
   certmanager:
     install: false
+  upgradeCheck:
+    enabled: false
