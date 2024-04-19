@@ -4,4 +4,5 @@ gitlab:
     hosts:
       domain: gitlab.incompletion.ist
       https: false
-    configureCertmanager: false
+    ingress:
+      configureCertmanager: false
