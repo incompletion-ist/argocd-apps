@@ -6,3 +6,5 @@ gitlab:
       https: false
     ingress:
       configureCertmanager: false
+  certmanager:
+    install: false
