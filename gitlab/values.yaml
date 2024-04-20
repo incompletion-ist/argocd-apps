@@ -11,6 +11,7 @@ gitlab:
     smtp:
       enabled: true
       address: smtp.gmail.com
+      port: 587
       tls: true
       authentication: plain
       user_name: micah@kemp.tv
