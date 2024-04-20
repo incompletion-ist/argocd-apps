@@ -21,7 +21,7 @@ spec:
         - containerPort: 8888
         volumeMounts:
         - mountPath: "/data"
-          name: data
+          name: storage
       imagePullSecrets:
       - name: pull-secret
       volumes:
