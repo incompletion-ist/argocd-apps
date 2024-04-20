@@ -1,0 +1,21 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: carousel
+spec:
+  tls:
+  - hosts:
+      - carousel.incompletion.ist
+    secretName: carousel-tls
+  rules:
+  - host: carousel.incompletion.ist
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: carousel
+            port:
+              number: 8888
