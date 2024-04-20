@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: carousel
-        image: gitlab.incompletion.ist/disimprovement/carousel:0.0.1
+        image: registry.incompletion.ist/disimprovement/carousel:0.0.1
         ports:
         - containerPort: 8888
       imagePullSecrets:
