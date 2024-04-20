@@ -1,0 +1,46 @@
+gitlab:
+  global:
+    hosts:
+      domain: incompletion.ist
+    ingress:
+      configureCertmanager: false
+    email:
+      display_name: 'Incompletionist GitLab'
+      from: 'gitlab@gitlab.incompletion.ist'
+      reply_to: 'noreply@gitlab.incompletion.ist'
+    smtp:
+      enabled: true
+      address: smtp.gmail.com
+      port: 465
+      tls: true
+      domain: smtp.gmail.com
+      enable_starttls_auto: true
+      authentication: plain
+      openssl_verify_mode: peer
+      user_name: micahkemp@gmail.com
+      password:
+        secret: smtp-auth
+        key: password
+  certmanager:
+    install: false
+  upgradeCheck:
+    enabled: false
+  gitlab:
+    webservice:
+      ingress:
+        annotations:
+          cert-manager.io/cluster-issuer: vault-issuer
+          cert-manager.io/private-key-size: "4096"
+          cert-manager.io/common-name: gitlab.incompletion.ist
+        tls:
+          secretName: webservice-tls
+  registry:
+    ingress:
+      annotations:
+        cert-manager.io/cluster-issuer: vault-issuer
+        cert-manager.io/private-key-size: "4096"
+        cert-manager.io/common-name: registry.incompletion.ist
+      tls:
+        secretName: registry-tls
+  gitlab-runner:
+    certsSecretName: cacert
