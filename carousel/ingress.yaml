@@ -10,17 +10,17 @@ metadata:
 spec:
   ingressClassName: nginx
   tls:
-  - hosts:
-      - carousel.incompletion.ist
-    secretName: carousel-tls
+    - hosts:
+        - carousel.incompletion.ist
+      secretName: carousel-tls
   rules:
-  - host: carousel.incompletion.ist
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: carousel
-            port:
-              number: 8888
+    - host: carousel.incompletion.ist
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: carousel
+              port:
+                number: 8888
