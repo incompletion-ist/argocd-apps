@@ -28,3 +28,8 @@ spec:
     path: carousel
     repoURL: git@github.com:incompletion-ist/argocd-apps.git
     targetRevision: carousel
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: carousel
