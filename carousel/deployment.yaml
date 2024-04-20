@@ -12,7 +12,7 @@ spec:
   template:
     metadata:
       labels:
-        app: carousel
+        app.kubernetes.io/name: carousel
     spec:
       containers:
       - name: carousel
