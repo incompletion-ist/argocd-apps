@@ -21,3 +21,7 @@ spec:
         - containerPort: 8888
       imagePullSecrets:
       - name: pull-secret
+      volumes:
+      - name: storage
+        persistentVolumeClaim:
+          claimName: storage
