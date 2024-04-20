@@ -34,13 +34,13 @@ gitlab:
           cert-manager.io/common-name: gitlab.incompletion.ist
         tls:
           secretName: webservice-tls
-    registry:
-      ingress:
-        annotations:
-          cert-manager.io/cluster-issuer: vault-issuer
-          cert-manager.io/private-key-size: "4096"
-          cert-manager.io/common-name: registry.incompletion.ist
-        tls:
-          secretName: registry-tls
+  registry:
+    ingress:
+      annotations:
+        cert-manager.io/cluster-issuer: vault-issuer
+        cert-manager.io/private-key-size: "4096"
+        cert-manager.io/common-name: registry.incompletion.ist
+      tls:
+        secretName: registry-tls
   gitlab-runner:
     certsSecretName: cacert
