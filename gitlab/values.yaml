@@ -15,7 +15,7 @@ gitlab:
       tls: true
       domain: smtp.gmail.com
       enable_starttls_auto: true
-      authentication: login
+      authentication: plain
       openssl_verify_mode: peer
       user_name: admin@micah.ws
       password:
