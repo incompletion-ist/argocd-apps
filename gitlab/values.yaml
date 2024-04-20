@@ -35,6 +35,7 @@ gitlab:
         tls:
           secretName: webservice-tls
     registry:
+      ingress:
         annotations:
           cert-manager.io/cluster-issuer: vault-issuer
           cert-manager.io/private-key-size: "4096"
