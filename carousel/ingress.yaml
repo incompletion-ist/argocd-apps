@@ -8,6 +8,7 @@ metadata:
     cert-manager.io/common-name: carousel.incompletion.ist
     cert-manager.io/private-key-size: "4096"
 spec:
+  ingressClassName: nginx
   tls:
   - hosts:
       - carousel.incompletion.ist
