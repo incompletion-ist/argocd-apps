@@ -13,7 +13,7 @@ gitlab:
       address: smtp.gmail.com
       port: 465
       tls: true
-      authentication: login
+      authentication: plain
       user_name: admin@micah.ws
       password:
         secret: smtp-auth
