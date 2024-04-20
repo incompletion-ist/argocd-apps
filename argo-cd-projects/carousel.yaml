@@ -1,0 +1,30 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: carousel
+  namespace: argocd
+  finalizers: null
+spec:
+  description: Carousel Deployment
+  sourceRepos:
+    - git@github.com:incompletion-ist/argocd-apps.git
+  destinations:
+    - namespace: carousel
+      server: https://kubernetes.default.svc
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: carousel
+  namespace: argocd
+  finalizers: null
+spec:
+  destination:
+    namespace: carousel
+    server: https://kubernetes.default.svc
+  project: carousel
+  source:
+    path: carousel
+    repoURL: git@github.com:incompletion-ist/argocd-apps.git
+    targetRevision: carousel
