@@ -17,7 +17,7 @@ gitlab:
       enable_starttls_auto: true
       authentication: plain
       openssl_verify_mode: peer
-      user_name: admin@micah.ws
+      user_name: micahkemp@gmail.com
       password:
         secret: smtp-auth
         key: password
