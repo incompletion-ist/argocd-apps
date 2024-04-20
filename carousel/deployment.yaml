@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: carousel
-        image: registry.incompletion.ist/disimprovement/carousel:0.0.3
+        image: registry.incompletion.ist/disimprovement/carousel:0.0.4
         ports:
         - containerPort: 8888
         volumeMounts:
