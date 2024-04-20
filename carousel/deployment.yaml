@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: carousel
+  labels:
+    app: carousel
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: carousel
+  template:
+    metadata:
+      labels:
+        app: carousel
+    spec:
+      containers:
+      - name: carousel
+        image: gitlab.incompletion.ist/disimprovement/carousel:0.0.1
+        ports:
+        - containerPort: 8888
