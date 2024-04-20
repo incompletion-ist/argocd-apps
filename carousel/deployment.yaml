@@ -19,3 +19,5 @@ spec:
         image: gitlab.incompletion.ist/disimprovement/carousel:0.0.1
         ports:
         - containerPort: 8888
+      imagePullSecrets:
+      - name: pull-secret
