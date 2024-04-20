@@ -47,7 +47,7 @@ metadata:
 spec:
   type: kv-v2
   mount: kv
-  path: smtp.gmail.com/gitlab.incompletion.ist/micah
+  path: smtp.gmail.com/micahkemp/incompletionist-gitlab
   vaultAuthRef: gitlab-auth
   destination:
     name: smtp-auth
