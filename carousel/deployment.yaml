@@ -3,12 +3,12 @@ kind: Deployment
 metadata:
   name: carousel
   labels:
-    app: carousel
+    app.kubernetes.io/name: carousel
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: carousel
+      app.kubernetes.io/name: carousel
   template:
     metadata:
       labels:
