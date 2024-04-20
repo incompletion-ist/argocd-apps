@@ -3,6 +3,10 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: carousel
+  annotations:
+    cert-manager.io/cluster-issuer: vault-issuer
+    cert-manager.io/common-name: vault.incompletion.ist
+    cert-manager.io/private-key-size: "4096"
 spec:
   tls:
   - hosts:
