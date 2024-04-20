@@ -11,9 +11,12 @@ gitlab:
     smtp:
       enabled: true
       address: smtp.gmail.com
-      port: 465
+      port: 587
       tls: true
-      authentication: plain
+      domain: smtp.gmail.com
+      enable_starttls_auto: true
+      authentication: login
+      openssl_verify_mode: peer
       user_name: admin@micah.ws
       password:
         secret: smtp-auth
