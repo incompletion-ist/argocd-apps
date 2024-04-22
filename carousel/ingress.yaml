@@ -45,6 +45,10 @@ metadata:
     cert-manager.io/cluster-issuer: vault-issuer
     cert-manager.io/common-name: carousel.incompletion.ist
     cert-manager.io/private-key-size: "4096"
+    nginx.ingress.kubernetes.io/auth-tls-verify-client: "on"
+    nginx.ingress.kubernetes.io/auth-tls-secret: "carousel/auth-ca"
+    nginx.ingress.kubernetes.io/auth-tls-verify-depth: "1"
+    nginx.ingress.kubernetes.io/auth-tls-pass-certificate-to-upstream: "false"
 spec:
   ingressClassName: nginx
   tls:
