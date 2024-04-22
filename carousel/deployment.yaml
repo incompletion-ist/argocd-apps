@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: carousel
+  labels:
+    app.kubernetes.io/name: carousel
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: carousel
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: carousel
+    spec:
+      containers:
+      - name: carousel
+        image: registry.incompletion.ist/disimprovement/carousel:0.0.4
+        ports:
+        - containerPort: 8888
+        volumeMounts:
+        - mountPath: "/data"
+          name: storage
+      imagePullSecrets:
+      - name: pull-secret
+      volumes:
+      - name: storage
+        persistentVolumeClaim:
+          claimName: storage
