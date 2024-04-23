@@ -27,7 +27,7 @@ spec:
   source:
     path: carousel
     repoURL: git@github.com:incompletion-ist/argocd-apps.git
-    targetRevision: HEAD
+    targetRevision: carousel-config
 ---
 apiVersion: v1
 kind: Namespace
