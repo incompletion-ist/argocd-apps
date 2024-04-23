@@ -22,11 +22,19 @@ spec:
         ports:
           - containerPort: 8888
         volumeMounts:
+          - mountPath: /config
+            name: config
           - mountPath: "/data"
             name: storage
       imagePullSecrets:
         - name: pull-secret
       volumes:
+        - name: config
+          configMap:
+            name: config
+            items:
+              - key: config.json
+                path: config.json
         - name: storage
           persistentVolumeClaim:
             claimName: storage
