@@ -16,15 +16,25 @@ spec:
     spec:
       containers:
       - name: carousel
-        image: registry.incompletion.ist/disimprovement/carousel:0.0.4
+        image: registry.incompletion.ist/disimprovement/carousel:0.0.5
+        args:
+          - /config/config.json
         ports:
-        - containerPort: 8888
+          - containerPort: 8888
         volumeMounts:
-        - mountPath: "/data"
-          name: storage
+          - mountPath: /config
+            name: config
+          - mountPath: "/data"
+            name: storage
       imagePullSecrets:
-      - name: pull-secret
+        - name: pull-secret
       volumes:
-      - name: storage
-        persistentVolumeClaim:
-          claimName: storage
+        - name: config
+          configMap:
+            name: config
+            items:
+              - key: config.json
+                path: config.json
+        - name: storage
+          persistentVolumeClaim:
+            claimName: storage

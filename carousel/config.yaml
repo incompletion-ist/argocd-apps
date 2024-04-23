@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config
+data:
+  config.json: |
+    {
+      "web": {
+        "port": 8888
+      },
+      "storage": {
+        "path": "/data"
+      },
+      "metadata": {
+        "path": "/data/metadata.json"
+      }
+    }
