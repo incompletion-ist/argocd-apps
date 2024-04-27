@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: carousel
-        image: registry.incompletion.ist/disimprovement/carousel:0.0.5
+        image: registry.incompletion.ist/disimprovement/carousel:0.0.6
         args:
           - /config/config.json
         ports:
