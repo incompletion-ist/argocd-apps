@@ -13,5 +13,8 @@ data:
       },
       "metadata": {
         "path": "/data/metadata.json"
+      },
+      "download_item": {
+        "path": "/data/download_item.json"
       }
     }
