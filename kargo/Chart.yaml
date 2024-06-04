@@ -1,0 +1,10 @@
+apiVersion: v2
+name: kargo
+description: Install Kargo with our configurations
+type: application
+version: "0.1.0"
+appVersion: "v0.1.0"
+dependencies:
+  - name: kargo
+    version: "0.6.0"
+    repository: https://ghcr.io/akuity/kargo-charts
