@@ -2,3 +2,4 @@ kargo:
   api:
     adminAccount:
       passwordHash: "$2y$05$28inUh6pM7dAZmpK8rnaY.3xlbGcec.bjPyOqjvnluXg6R49.Yphe"
+      tokenSigningKey: 3qUjh3YU9J7NxR7Vr94ZbS7Jn74msa
