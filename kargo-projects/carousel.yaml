@@ -3,6 +3,10 @@ apiVersion: kargo.akuity.io/v1alpha1
 kind: Project
 metadata:
   name: kargo-carousel
+spec:
+  promotionPolicies:
+    - stage: production
+      autoPromotionEnabled: true
 ---
 apiVersion: kargo.akuity.io/v1alpha1
 kind: Stage
