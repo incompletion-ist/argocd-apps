@@ -36,7 +36,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: kargo-projects
-  namespace: kargo
+  namespace: argocd
   finalizers: null
 spec:
   destination:
