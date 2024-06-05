@@ -9,3 +9,6 @@ kind: Stage
 metadata:
   name: production
   namespace: kargo-carousel
+spec:
+  subscriptions:
+    warehouse: my-warehouse
