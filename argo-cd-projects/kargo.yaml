@@ -31,3 +31,19 @@ spec:
     path: kargo
     repoURL: git@github.com:incompletion-ist/argocd-apps.git
     targetRevision: kargo
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kargo-projects
+  namespace: kargo
+  finalizers: null
+spec:
+  destination:
+    namespace: kargo
+    server: https://kubernetes.default.svc
+  project: kargo
+  source:
+    path: kargo
+    repoURL: git@github.com:incompletion-ist/argocd-apps.git
+    targetRevision: kargo-projects
