@@ -12,3 +12,13 @@ metadata:
 spec:
   subscriptions:
     warehouse: my-warehouse
+---
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Warehouse
+metadata:
+  name: carousel-image
+  namespace: kargo-carousel
+spec:
+  subscriptions:
+    - image:
+        repoURL: registry.incompletion.ist/disimprovement/carousel
