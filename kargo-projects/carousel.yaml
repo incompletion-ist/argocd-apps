@@ -11,12 +11,12 @@ metadata:
   namespace: kargo-carousel
 spec:
   subscriptions:
-    warehouse: my-warehouse
+    warehouse: production
 ---
 apiVersion: kargo.akuity.io/v1alpha1
 kind: Warehouse
 metadata:
-  name: carousel-image
+  name: production
   namespace: kargo-carousel
 spec:
   subscriptions:
