@@ -12,6 +12,14 @@ metadata:
 spec:
   subscriptions:
     warehouse: production
+  promotionMechanisms:
+    gitRepoUpdates:
+      - repoURL: github.com/incompletion-ist/argocd-apps
+        writeBranch: kargo-testing
+        kustomize:
+          images:
+            - image: registry.incompletion.ist/disimprovement/carousel
+              path: carousel
 ---
 apiVersion: kargo.akuity.io/v1alpha1
 kind: Warehouse
