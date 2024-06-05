@@ -14,7 +14,7 @@ spec:
     warehouse: production
   promotionMechanisms:
     gitRepoUpdates:
-      - repoURL: github.com/incompletion-ist/argocd-apps
+      - repoURL: https://github.com/incompletion-ist/argocd-apps
         writeBranch: kargo-testing
         kustomize:
           images:
