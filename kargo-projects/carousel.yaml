@@ -23,6 +23,7 @@ spec:
         kustomize:
           images:
             - image: registry.incompletion.ist/disimprovement/carousel
+              useDigest: true
               path: carousel
 ---
 apiVersion: kargo.akuity.io/v1alpha1
