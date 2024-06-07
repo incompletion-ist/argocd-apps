@@ -1,9 +1,12 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - config.yaml
-  - deployment.yaml
-  - ingress.yaml
-  - service.yaml
-  - storage.yaml
-  - vault-secrets.yaml
+- config.yaml
+- deployment.yaml
+- ingress.yaml
+- service.yaml
+- storage.yaml
+- vault-secrets.yaml
+images:
+- digest: sha256:90022875db640a659f017b4137d27312bb747918604fe09e17d96f763cbc0db1
+  name: registry.incompletion.ist/disimprovement/carousel
