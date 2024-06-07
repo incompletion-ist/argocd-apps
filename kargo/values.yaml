@@ -6,3 +6,5 @@ kargo:
     host: kargo.incompletion.ist
     ingress:
       enabled: true
+    tls:
+      enabled: false
