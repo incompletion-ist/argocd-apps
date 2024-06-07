@@ -10,5 +10,8 @@ kargo:
         cert-manager.io/cluster-issuer: vault-issuer
         cert-manager.io/common-name: kargo.incompletion.ist
         cert-manager.io/private-key-size: "4096"
+      tls:
+        selfSignedCert: false
     tls:
       enabled: false
+      selfSignedCert: false
