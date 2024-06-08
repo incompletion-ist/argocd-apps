@@ -1,0 +1,17 @@
+---
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Stage
+metadata:
+  name: production
+spec:
+  subscriptions:
+    warehouse: production
+  promotionMechanisms:
+    gitRepoUpdates:
+      - repoURL: https://github.com/incompletion-ist/argocd-apps
+        writeBranch: kargo-testing
+        kustomize:
+          images:
+            - image: registry.incompletion.ist/disimprovement/carousel
+              useDigest: true
+              path: carousel
