@@ -48,4 +48,4 @@ spec:
   source:
     path: kargo-projects
     repoURL: git@github.com:incompletion-ist/argocd-apps.git
-    targetRevision: kargo-projects
+    targetRevision: HEAD
