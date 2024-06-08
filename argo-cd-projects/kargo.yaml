@@ -32,7 +32,7 @@ spec:
   source:
     path: kargo
     repoURL: git@github.com:incompletion-ist/argocd-apps.git
-    targetRevision: kargo
+    targetRevision: HEAD
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
