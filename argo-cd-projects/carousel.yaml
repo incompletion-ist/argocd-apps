@@ -34,7 +34,7 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kcargo-carousel
+  name: kargo-carousel
   namespace: argocd
   finalizers: null
 spec:
