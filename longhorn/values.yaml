@@ -5,6 +5,7 @@ longhorn:
         defaultDataPath: /opt/longhorn
         # single replica until more nodes added (UI)
         defaultReplicaCount: 1
+        storageReservedPercentageForDefaultDisk: 0
     persistence:
         # single replica until more nodes added
         defaultClassReplicaCount: 1
