@@ -3,8 +3,8 @@ name: nginx-ingress
 description: Install nginx-ingress with our configurations
 type: application
 version: "0.1.0"
-appVersion: "3.7.0"
+appVersion: "1.11.1"
 dependencies:
-  - name: nginx-ingress
-    version: "1.4.0"
-    repository: oci://ghcr.io/nginxinc/charts/nginx-ingress
+  - name: ingress-nginx
+    version: "v4.11.1"
+    repository: https://kubernetes.github.io/ingress-nginx
