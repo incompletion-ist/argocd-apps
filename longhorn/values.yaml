@@ -1,3 +1,8 @@
 longhorn:
     preUpgradeChecker:
         jobEnabled: false
+    defaultSettings:
+        defaultDataPath: /opt/longhorn
+    persistence:
+        # single replica until more nodes added
+        defaultClassReplicaCount: 1
