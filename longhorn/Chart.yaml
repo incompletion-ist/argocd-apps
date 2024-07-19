@@ -1,0 +1,10 @@
+apiVersion: v2
+name: longhorn
+description: Install Longhorn with our configurations
+type: application
+version: "0.1.0"
+appVersion: "v1.5.2"
+dependencies:
+  - name: longhorn
+    version: "1.6.2"
+    repository: https://charts.longhorn.io
