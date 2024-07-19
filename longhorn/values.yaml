@@ -3,6 +3,8 @@ longhorn:
         jobEnabled: false
     defaultSettings:
         defaultDataPath: /opt/longhorn
+        # single replica until more nodes added (UI)
+        defaultReplicaCount: 1
     persistence:
         # single replica until more nodes added
         defaultClassReplicaCount: 1
