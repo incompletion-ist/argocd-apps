@@ -1,0 +1,10 @@
+apiVersion: v2
+name: rancher
+description: Install Rancher with our configurations
+type: application
+version: "0.1.0"
+appVersion: "v2.8.5"
+dependencies:
+  - name: rancher
+    version: "2.8.5"
+    repository: https://releases.rancher.com/server-charts/stable

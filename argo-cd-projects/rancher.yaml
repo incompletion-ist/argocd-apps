@@ -1,0 +1,33 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: rancher
+  namespace: argocd
+  finalizers: null
+spec:
+  description: Rancher Deployment
+  sourceRepos:
+    - git@github.com:incompletion-ist/argocd-apps.git
+  destinations:
+    - namespace: cattle-system
+      server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: rancher
+  namespace: argocd
+  finalizers: null
+spec:
+  destination:
+    namespace: cattle-system
+    server: https://kubernetes.default.svc
+  project: rancher
+  source:
+    path: rancher
+    repoURL: git@github.com:incompletion-ist/argocd-apps.git
+    targetRevision: k3s
