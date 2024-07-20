@@ -8,7 +8,7 @@ metadata:
 spec:
   description: nginx-ingress Deployment
   sourceRepos:
-    - git@github.com:incompletion-ist/argocd-apps.git
+    - https://github.com/incompletion-ist/argocd-apps.git
   destinations:
     - namespace: nginx-ingress
       server: https://kubernetes.default.svc
@@ -29,5 +29,5 @@ spec:
   project: nginx-ingress
   source:
     path: nginx-ingress
-    repoURL: git@github.com:incompletion-ist/argocd-apps.git
+    repoURL: https://github.com/incompletion-ist/argocd-apps.git
     targetRevision: k3s
