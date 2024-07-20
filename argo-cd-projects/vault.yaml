@@ -8,7 +8,7 @@ metadata:
 spec:
   description: Vault Deployment
   sourceRepos:
-    - https://github.com/incompletion-ist/argocd-apps.git
+    - git@github.com:incompletion-ist/argocd-apps.git
   destinations:
     - namespace: vault
       server: https://kubernetes.default.svc
@@ -29,5 +29,5 @@ spec:
   project: vault
   source:
     path: vault
-    repoURL: https://github.com/incompletion-ist/argocd-apps.git
+    repoURL: git@github.com:incompletion-ist/argocd-apps.git
     targetRevision: k3s
