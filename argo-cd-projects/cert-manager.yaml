@@ -8,7 +8,7 @@ metadata:
 spec:
   description: cert-manager Deployment
   sourceRepos:
-    - git@github.com:incompletion-ist/argocd-apps.git
+    - https://github.com/incompletion-ist/argocd-apps.git
   destinations:
     - namespace: cert-manager
       server: https://kubernetes.default.svc
@@ -31,7 +31,7 @@ spec:
   project: cert-manager
   source:
     path: cert-manager
-    repoURL: git@github.com:incompletion-ist/argocd-apps.git
+    repoURL: https://github.com/incompletion-ist/argocd-apps.git
     targetRevision: k3s
 ---
 apiVersion: argoproj.io/v1alpha1
@@ -47,5 +47,5 @@ spec:
   project: cert-manager
   source:
     path: cert-manager-vault
-    repoURL: git@github.com:incompletion-ist/argocd-apps.git
+    repoURL: https://github.com/incompletion-ist/argocd-apps.git
     targetRevision: k3s
