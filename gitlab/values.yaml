@@ -54,4 +54,4 @@ gitlab:
       nodeSelector:
         kubernetes.io/arch: amd64
   nginx-ingress:
-    enabled: true
+    enabled: false
