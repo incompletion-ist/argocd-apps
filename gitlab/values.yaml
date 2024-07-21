@@ -21,6 +21,8 @@ gitlab:
       password:
         secret: smtp-auth
         key: password
+    nodeSelector:
+      kubernetes.io/arch: amd64
   certmanager:
     install: false
   upgradeCheck:
