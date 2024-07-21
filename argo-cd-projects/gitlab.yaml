@@ -30,4 +30,4 @@ spec:
   source:
     path: gitlab
     repoURL: git@github.com:incompletion-ist/argocd-apps.git
-    targetRevision: HEAD
+    targetRevision: k3s
