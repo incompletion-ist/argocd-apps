@@ -4,5 +4,6 @@ rancher:
     ingressClassName: nginx
     extraAnnotations:
       cert-manager.io/issuer: "vault-issuer"
+      cert-manager.io/issuer-kind: ClusterIssuer
       cert-manager.io/common-name: rancher.incompletion.ist
       cert-manager.io/private-key-size: "4096"
