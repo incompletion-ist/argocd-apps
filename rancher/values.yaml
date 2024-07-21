@@ -1,9 +1,7 @@
 rancher:
   hostname: rancher.incompletion.ist
   ingress:
+    ingressClassName: nginx
     extraAnnotations:
       cert-manager.io/common-name: rancher.incompletion.ist
       cert-manager.io/private-key-size: "4096"
-  letsEncrypt:
-    ingress:
-      class: nginx
