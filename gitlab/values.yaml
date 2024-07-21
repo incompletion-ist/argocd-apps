@@ -48,6 +48,8 @@ gitlab:
     certsSecretName: cacert
   redis:
     master:
-      nodeSelector: kubernetes.io/arch: amd64
+      nodeSelector:
+        kubernetes.io/arch: amd64
     replica:
-      nodeSelector: kubernetes.io/arch: amd64
+      nodeSelector:
+        kubernetes.io/arch: amd64
