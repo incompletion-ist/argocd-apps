@@ -2,6 +2,5 @@ rancher:
   hostname: rancher.incompletion.ist
   ingress:
     extraAnnotations:
-      cert-manager.io/cluster-issuer: vault-issuer
       cert-manager.io/common-name: rancher.incompletion.ist
       cert-manager.io/private-key-size: "4096"
