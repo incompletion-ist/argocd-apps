@@ -46,6 +46,14 @@ gitlab:
         secretName: registry-tls
   gitlab-runner:
     certsSecretName: cacert
+    nodeSelector:
+        kubernetes.io/arch: amd64
+    runners:
+      config: |
+        [[runners]]
+          [runners.kubernetes]
+            [runners.kubernetes.node_selector]
+              "kubernetes.io/arch" = "amd64"
   redis:
     master:
       nodeSelector:
