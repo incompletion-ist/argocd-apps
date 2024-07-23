@@ -29,25 +29,25 @@ spec:
   source:
     path: carousel
     repoURL: git@github.com:incompletion-ist/argocd-apps.git
-    targetRevision: HEAD
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: kargo-carousel
-  namespace: argocd
-  finalizers: null
-spec:
-  destination:
-    namespace: kargo-carousel
-    server: https://kubernetes.default.svc
-  project: carousel
-  source:
-    path: kargo-carousel
-    repoURL: git@github.com:incompletion-ist/argocd-apps.git
-    targetRevision: kargo-carousel
+    targetRevision: k3s
 ---
 apiVersion: v1
 kind: Namespace
 metadata:
   name: carousel
+#---
+#apiVersion: argoproj.io/v1alpha1
+#kind: Application
+#metadata:
+#  name: kargo-carousel
+#  namespace: argocd
+#  finalizers: null
+#spec:
+#  destination:
+#    namespace: kargo-carousel
+#    server: https://kubernetes.default.svc
+#  project: carousel
+#  source:
+#    path: kargo-carousel
+#    repoURL: git@github.com:incompletion-ist/argocd-apps.git
+#    targetRevision: kargo-carousel
