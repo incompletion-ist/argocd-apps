@@ -5,6 +5,7 @@ longhorn:
         defaultDataPath: /opt/longhorn
         defaultReplicaCount: 2
         storageReservedPercentageForDefaultDisk: 0
+        logLevel: Debug
     persistence:
         # single replica until more nodes added
         defaultClassReplicaCount: 2
