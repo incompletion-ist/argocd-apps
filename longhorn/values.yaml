@@ -6,7 +6,7 @@ longhorn:
         defaultReplicaCount: 2
         storageReservedPercentageForDefaultDisk: 0
         logLevel: Debug
-        backupTarget: nfs://10.1.80.15/opt/backup
+        backupTarget: nfs://10.1.80.15:/opt/backup
     persistence:
         # single replica until more nodes added
         defaultClassReplicaCount: 2
