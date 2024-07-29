@@ -50,21 +50,21 @@ gitlab:
     nodeSelector:
         kubernetes.io/arch: amd64
     runners:
-      config: |
-        [[runners]]
-          [runners.kubernetes]
-          image = "ubuntu:22.04"
-          [runners.kubernetes.node_selector]
-            "kubernetes.io/arch" = "amd64"
-          [runners.cache]
-            Type = "s3"
-            Path = "gitlab-runner"
-            Shared = true
-            [runners.cache.s3]
-              ServerAddress = "minio.incompletion.ist"
-              BucketName = "runner-cache"
-              BucketLocation = "us-east-1"
-              Insecure = false
+      # config: |
+      #   [[runners]]
+      #     [runners.kubernetes]
+      #     image = "ubuntu:22.04"
+      #     [runners.kubernetes.node_selector]
+      #       "kubernetes.io/arch" = "amd64"
+      #     [runners.cache]
+      #       Type = "s3"
+      #       Path = "gitlab-runner"
+      #       Shared = true
+      #       [runners.cache.s3]
+      #         ServerAddress = "minio.incompletion.ist"
+      #         BucketName = "runner-cache"
+      #         BucketLocation = "us-east-1"
+      #         Insecure = false
   redis:
     master:
       nodeSelector:
