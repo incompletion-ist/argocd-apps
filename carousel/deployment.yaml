@@ -18,7 +18,7 @@ spec:
         kubernetes.io/arch: amd64
       containers:
       - name: carousel
-        image: registry.incompletion.ist/disimprovement/carousel:0.0.12
+        image: registry.gitlab.com/micahkemp/carousel:0.0.1
         args:
           - /config/config.json
         ports:
@@ -26,17 +26,15 @@ spec:
         volumeMounts:
           - mountPath: /config
             name: config
+            readOnly: true
           - mountPath: "/data"
             name: storage
       imagePullSecrets:
         - name: pull-secret
       volumes:
         - name: config
-          configMap:
-            name: config
-            items:
-              - key: config.json
-                path: config.json
+          secret:
+            secretName: config-secret
         - name: storage
           persistentVolumeClaim:
             claimName: storage
