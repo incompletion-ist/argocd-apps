@@ -30,7 +30,7 @@ spec:
           - mountPath: "/data"
             name: storage
       imagePullSecrets:
-        - name: pull-secret
+        - name: pull-secret-gitlab-com
       volumes:
         - name: config
           secret:
